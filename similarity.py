@@ -6,9 +6,10 @@ from PIL import Image
 
 def predict(list_data):
 
-    results = []
+    # results = []
+    results = {}
 
-    for data in list_data:
+    for i, data in enumerate(list_data):
 
         image_path = data["path"]
         x1 = data["x1"]
@@ -27,7 +28,8 @@ def predict(list_data):
             "wave" : inst + str(scale),
         }
 
-        results.append(result)
+        # results.append(result)
+        results[str(i)] = result
 
     return results
 

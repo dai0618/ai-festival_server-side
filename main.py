@@ -27,6 +27,14 @@ def test():
     detect_data = detect("./get_image/test.jpg",3)
     list_data = predict(detect_data)
     json_data = json.dumps(list_data)
+
+    # json_data = json_data.replace('"', "")
+    # json_data = json_data.replace('[', "")
+    # json_data = json_data.replace(']', "")
+
+    # json_data = json.dumps(json_data)
+
+    print(json_data)
     
     return jsonify(json_data)
 
